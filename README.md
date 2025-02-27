@@ -14,6 +14,7 @@ Please make sure you have the right versions and download both packages. You can
 
 ```bash
 # Check Node.js version
+node --version
 ```
 
 ### Instructions
@@ -34,5 +35,5 @@ Your server should now be running at http://locahost:9080
 
 ### User 2
 
-- Email: `test@test.fr`,
+- Email: `test2@test.fr`,
 - Password: `mypassword123.`
