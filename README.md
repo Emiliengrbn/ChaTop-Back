@@ -6,7 +6,7 @@ This codebase contains the code needed to run the backend for [ChaTôp app](http
 
 ### Prerequisites
 
-Argent Bank uses the following tech stack:
+ChaTôp uses the following tech stack:
 
 - [Node.js v12](https://nodejs.org/en/)
 
