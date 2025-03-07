@@ -104,6 +104,6 @@ Créez vos utilisateur
   INSERT INTO `USERS` (`email`, `name`, `password`, `created_at`, `updated_at`)
   VALUES ('test@test.fr', 'My test', 'mypassword123.', NOW(), NOW());
 ```
+
 Votre base de données est maintenant prête.
 
-```
