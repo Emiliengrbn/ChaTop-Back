@@ -23,4 +23,87 @@ Assurez-vous d'avoir les bonnes versions.
 1. Lancez la commande de run
 
 Votre serveur devrait maintenant être en cours d'exécution à l'adresse http://localhost:9080
+
+### Base de données
+
+Pour que la base de données fonctionne, suivez les informations suivantes : 
+
+Une fois connecté à MySQL, vous devez créer une base de données où vous allez stocker vos tables. Utilisez la commande suivante pour créer la base de données :
+
+``` bash
+  CREATE DATABASE my_database;
+```
+
+Puis sélectionnez cette base de données pour travailler dessus :
+
+```bash
+  USE my_database;
+```
+
+Créez la table USERS
+
+```bash
+  CREATE TABLE `USERS` (
+    `id` INTEGER PRIMARY KEY AUTO_INCREMENT,
+    `email` VARCHAR(255),
+    `name` VARCHAR(255),
+    `password` VARCHAR(255),
+    `created_at` TIMESTAMP,
+    `updated_at` TIMESTAMP
+  );
+```
+
+Créez la table RENTALS
+
+```bash
+  CREATE TABLE `RENTALS` (
+    `id` INTEGER PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(255),
+    `surface` NUMERIC,
+    `price` NUMERIC,
+    `picture` VARCHAR(255),
+    `description` VARCHAR(2000),
+    `owner_id` INTEGER NOT NULL,
+    `created_at` TIMESTAMP,
+    `updated_at` TIMESTAMP
+  );
+```
+
+Créez la table MESSAGES
+
+```bash
+  CREATE TABLE `MESSAGES` (
+    `id` INTEGER PRIMARY KEY AUTO_INCREMENT,
+    `rental_id` INTEGER,
+    `user_id` INTEGER,
+    `message` VARCHAR(2000),
+    `created_at` TIMESTAMP,
+    `updated_at` TIMESTAMP
+  );
+```
+
+Ajoutez un index unique sur la colonne email dans la table USERS
+
+```bash
+  CREATE UNIQUE INDEX `USERS_index` ON `USERS` (`email`);
+```
+
+Ajoutez les clés étrangères
+
+```bash
+  ALTER TABLE `RENTALS` ADD FOREIGN KEY (`owner_id`) REFERENCES `USERS` (`id`);
+
+  ALTER TABLE `MESSAGES` ADD FOREIGN KEY (`user_id`) REFERENCES `USERS` (`id`);
+
+  ALTER TABLE `MESSAGES` ADD FOREIGN KEY (`rental_id`) REFERENCES `RENTALS` (`id`);
+```
+
+Créez vos utilisateur
+
+```bash
+  INSERT INTO `USERS` (`email`, `name`, `password`, `created_at`, `updated_at`)
+  VALUES ('test@test.fr', 'My test', 'mypassword123.', NOW(), NOW());
+```
+Votre base de données est maintenant prête.
+
 ```
