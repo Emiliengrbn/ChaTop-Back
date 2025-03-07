@@ -1,7 +1,6 @@
 package com.openclassrooms.services.interfaces;
 
 import org.springframework.security.oauth2.jwt.Jwt;
-import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 
 public interface IJWTService {
 

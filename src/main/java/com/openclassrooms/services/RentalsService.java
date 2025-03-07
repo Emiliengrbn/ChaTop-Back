@@ -15,7 +15,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 
 @Service
 public class RentalsService implements IRentalsService{
@@ -67,11 +66,10 @@ public class RentalsService implements IRentalsService{
 		return new MessageResponseDTO("Rental updated !");
 	}
 
-	public DBRentals getRentalById(Integer id) {
+	public RentalPictureDTO getRentalById(Integer id) {
 		DBRentals rental = rentalRepository.findById(id)
 				.orElseThrow(() -> new EntityNotFoundException("Location non trouvé avec l'ID : " + id));
-
-		return rental;
+		return this.modelMapper.map(rental, RentalPictureDTO.class);
 	}
 
 	@Override

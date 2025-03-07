@@ -1,9 +1,6 @@
 package com.openclassrooms.DTO;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.openclassrooms.model.AuditTable;
-
-import java.util.Date;
 
 public class MeDTO extends AuditTable {
 

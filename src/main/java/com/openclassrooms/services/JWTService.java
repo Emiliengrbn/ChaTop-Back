@@ -5,12 +5,9 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
 import com.openclassrooms.services.interfaces.IJWTService;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.oauth2.jose.jws.MacAlgorithm;
 import org.springframework.security.oauth2.jwt.*;
 import org.springframework.stereotype.Service;
-
-import javax.crypto.spec.SecretKeySpec;
 
 
 @Service
@@ -28,8 +25,7 @@ public class JWTService implements IJWTService {
 
     @Override
     public Jwt claimsEmail(String token) {
-        Jwt jwt = jwtDecoder.decode(token);
-        return jwt;
+        return jwtDecoder.decode(token);
     }
 
     @Override

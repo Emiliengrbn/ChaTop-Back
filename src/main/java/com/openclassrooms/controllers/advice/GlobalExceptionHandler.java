@@ -2,7 +2,6 @@ package com.openclassrooms.controllers.advice;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import com.openclassrooms.exeptions.MessageException;
@@ -26,12 +25,5 @@ public class GlobalExceptionHandler {
         HttpStatus status = HttpStatus.BAD_REQUEST;
         return ResponseEntity.status(status).body(errorResponseDto);
     }
-
-    /*@ExceptionHandler(Exception.class)
-    public ResponseEntity<MessageException> exception(Exception ex) {
-        MessageException errorResponseDto = new MessageException("test");
-        HttpStatus status = HttpStatus.BAD_REQUEST;
-        return ResponseEntity.status(status).body(errorResponseDto);
-    }*/
 
 }

@@ -1,6 +1,5 @@
 package com.openclassrooms.DTO;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import org.springframework.web.multipart.MultipartFile;
 
 public class RentalMultipartFileDTO extends RentalDTO{

@@ -10,16 +10,16 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class S3Config {
-    @Value("${AwsAccessKey}")
+    @Value("${aws.accessKey}")
     private String accessKey;
 
-    @Value("${AwsSecretKey}")
+    @Value("${aws.secretKey}")
     private String secretKey;
 
-    @Value("eu-west-3")
+    @Value("${aws.s3.region}")
     private String region;
 
-    @Value("mychatopapp")
+    @Value("${aws.s3.bucketName}")
     private String bucketName;
 
     @Bean

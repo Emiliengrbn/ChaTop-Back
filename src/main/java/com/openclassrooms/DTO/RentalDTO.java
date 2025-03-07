@@ -1,28 +1,22 @@
 package com.openclassrooms.DTO;
 
-import java.util.Date;
-
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import jakarta.persistence.Column;
 
 public class RentalDTO {
 
 	private Integer id;
-	@NotEmpty(message = "Y")
-	@NotNull(message = "T")
+	@NotEmpty()
+	@NotNull()
     private String name;
-	@NotNull(message = "R")
+	@NotNull()
     private Double surface;
-	@NotNull(message = "E")
+	@NotNull()
     private Double price;
-	@NotEmpty(message = "Z")
-	@NotNull(message = "A")
+	@NotEmpty()
+	@NotNull()
     private String description;
     @JsonProperty("owner_id")
     private Integer ownerId;
